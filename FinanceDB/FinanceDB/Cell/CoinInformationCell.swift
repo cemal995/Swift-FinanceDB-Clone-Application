@@ -42,18 +42,36 @@ class CoinInformationCell: UICollectionViewCell {
             coinPictureImageView.kf.setImage(with: url)
         }
         
-        coinNameLabel.text = coin.name
-        coinPriceLabel.text = coin.price
-        coinSymbolLabel.text = coin.symbol
+        if let price = coin.price, let priceDouble = Double(price) {
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .currency
+            numberFormatter.currencySymbol = "$"
+            numberFormatter.minimumFractionDigits = 2
+            numberFormatter.maximumFractionDigits = 2
+            numberFormatter.decimalSeparator = "."
+            numberFormatter.groupingSeparator = ","
+            
+            if let formattedPrice = numberFormatter.string(from: NSNumber(value: priceDouble)) {
+                       coinPriceLabel.text = formattedPrice
+                   } else {
+                       coinPriceLabel.text = "$0.00"
+                   }
+               } else {
+                   coinPriceLabel.text = "$0.00"
+               }
         
         if let change = coin.change, !change.isEmpty {
-             let floatValue = (change as NSString).floatValue
-             let sign = floatValue >= 0 ? "+" : ""
-             coinChangeLabel.text = "\(sign)\(change)"
-             coinChangeLabel.textColor = floatValue >= 0 ? UIColor.green : UIColor.red
-         } else {
-             coinChangeLabel.text = nil
-         }
+            let floatValue = (change as NSString).floatValue
+            let sign = floatValue >= 0 ? "+" : ""
+            coinChangeLabel.text = "\(sign)\(change)"
+            coinChangeLabel.textColor = floatValue >= 0 ? UIColor.green : UIColor.red
+        } else {
+            coinChangeLabel.text = nil
+        }
+        
+        coinNameLabel.text = coin.name
+        coinSymbolLabel.text = coin.symbol
     }
     
     private func setupConstraints() {
@@ -66,10 +84,9 @@ class CoinInformationCell: UICollectionViewCell {
     
     private func setupAppearance() {
         
-        self.layer.cornerRadius = 10// Adjust as needed
+        self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
-        //self.backgroundColor = UIColor.black
         self.layer.borderWidth = 3
         
-        }
+    }
 }

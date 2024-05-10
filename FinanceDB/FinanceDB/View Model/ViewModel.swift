@@ -9,17 +9,22 @@ import Foundation
 import FinanceAPI
 
 protocol ViewModelProtocol {
+    
     var delegate: ViewModelDelegate? { get set }
     var numberofItems: Int { get }
     func load()
     func coin(index: Int) -> Coin?
+    func didSelectCoin(at index: Int)
     
 }
 
 protocol ViewModelDelegate: AnyObject {
+    
     func showLoadingView()
     func hideLoadingView()
     func reloadData()
+    func didSelectCoin(at index: Int)
+    func navigateToCoinDetail(at index: Int)
 }
 
 final class ViewModel {
@@ -53,6 +58,10 @@ final class ViewModel {
 }
 
 extension ViewModel: ViewModelProtocol {
+    
+    func didSelectCoin(at index: Int) {
+        delegate?.navigateToCoinDetail(at: index)
+        }
     
     var numberofItems: Int {
         coins.count
