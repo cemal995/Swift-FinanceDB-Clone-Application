@@ -33,7 +33,6 @@ public class FinanceService: FinanceServiceProtocol {
                                     } else {
                                         completion(.success([]))
                                     }
-                    //completion(.success(coinResponse.data.coins))
                 } catch {
                     print("*********** JSON DECODE ERROR ********")
                     print(error)

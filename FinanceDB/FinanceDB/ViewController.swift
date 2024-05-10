@@ -6,41 +6,25 @@
 //
 
 import UIKit
-import FinanceAPI
 
 class ViewController: UIViewController, LoadingShowable {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let service: FinanceServiceProtocol = FinanceService()
-    var coins = [Coin]()
+    
+    var viewModel: ViewModelProtocol! {
+        didSet {
+            viewModel.delegate = self
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchCoins()
+        viewModel.load()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-    }
-    
-    fileprivate func fetchCoins() {
-        showLoading()
-        service.fetchCoinInformation { [weak self] response in
-            
-            guard let self else {return}
-            
-            switch response {
-            case .success(let coins):
-                hideLoading()
-                DispatchQueue.main.async {
-                    self.coins = coins
-                    self.collectionView.reloadData()
-                }
-            case .failure(let error):
-                print("Error:\(error.localizedDescription)")
-            }
-        }
     }
     
     func setupCollectionView() {
@@ -48,7 +32,6 @@ class ViewController: UIViewController, LoadingShowable {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(cellType: CoinInformationCell.self)
-        //collectionView.register(UINib(nibName: "CoinInformationCell", bundle: nil), forCellWithReuseIdentifier: "CoinInformationCell")
     }
 
 }
@@ -56,13 +39,15 @@ class ViewController: UIViewController, LoadingShowable {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        coins.count
+        viewModel.numberofItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeCell(cellType: CoinInformationCell.self, indexPath: indexPath)
-        cell.configure(coin: coins[indexPath.item])
+        if let coin = viewModel.coin(index: indexPath.row) {
+            cell.configure(coin: coin)
+        }
         return cell
     }
     
@@ -70,9 +55,27 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 350, height: 100)
     }
+    
 }
 
+extension ViewController: ViewModelDelegate {
+    
+    func showLoadingView() {
+        showLoading()
+    }
+    
+    func hideLoadingView() {
+        hideLoading()
+    }
+    
+    func reloadData() {
+        collectionView.reloadData()
+    }
+    
+    
+}
 

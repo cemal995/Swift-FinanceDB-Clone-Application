@@ -23,6 +23,7 @@
 		8EA0AC722BEE1AA900FD5654 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0AC712BEE1AA900FD5654 /* UICollectionViewCell.swift */; };
 		8EA0AC752BEE1E7100FD5654 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0AC742BEE1E7100FD5654 /* LoadingView.swift */; };
 		8EA0AC782BEE212A00FD5654 /* LoadingShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0AC772BEE212A00FD5654 /* LoadingShowable.swift */; };
+		8EBB8BE42BEE470E009FC643 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB8BE32BEE470E009FC643 /* ViewModel.swift */; };
 		8EBC15E22BED5BEC00BAE203 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBC15E12BED5BEC00BAE203 /* Kingfisher */; };
 		8EBC15E52BED5F1000BAE203 /* CoinInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBC15E42BED5F1000BAE203 /* CoinInformationCell.xib */; };
 		8EBC15E62BED5F1000BAE203 /* CoinInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBC15E32BED5F1000BAE203 /* CoinInformationCell.swift */; };
@@ -64,6 +65,7 @@
 		8EA0AC712BEE1AA900FD5654 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		8EA0AC742BEE1E7100FD5654 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8EA0AC772BEE212A00FD5654 /* LoadingShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingShowable.swift; sourceTree = "<group>"; };
+		8EBB8BE32BEE470E009FC643 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8EBC15E32BED5F1000BAE203 /* CoinInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinInformationCell.swift; sourceTree = "<group>"; };
 		8EBC15E42BED5F1000BAE203 /* CoinInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinInformationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				8E63A4582BEBE8AF0097449E /* Storyboard */,
 				8E63A4572BEBE8870097449E /* Resources */,
 				8E9D615A2BEB9B34002684CB /* ViewController.swift */,
+				8EBB8BE32BEE470E009FC643 /* ViewModel.swift */,
 				8E9D61672BEB9B34002684CB /* Info.plist */,
 			);
 			path = FinanceDB;
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBB8BE42BEE470E009FC643 /* ViewModel.swift in Sources */,
 				8EA0AC782BEE212A00FD5654 /* LoadingShowable.swift in Sources */,
 				8EA0AC702BEE1A9B00FD5654 /* UICollectionView.swift in Sources */,
 				8EA0AC722BEE1AA900FD5654 /* UICollectionViewCell.swift in Sources */,

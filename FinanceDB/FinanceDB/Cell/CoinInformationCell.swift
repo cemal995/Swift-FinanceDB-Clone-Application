@@ -45,8 +45,15 @@ class CoinInformationCell: UICollectionViewCell {
         coinNameLabel.text = coin.name
         coinPriceLabel.text = coin.price
         coinSymbolLabel.text = coin.symbol
-        coinChangeLabel.text = coin.change
         
+        if let change = coin.change, !change.isEmpty {
+             let floatValue = (change as NSString).floatValue
+             let sign = floatValue >= 0 ? "+" : ""
+             coinChangeLabel.text = "\(sign)\(change)"
+             coinChangeLabel.textColor = floatValue >= 0 ? UIColor.green : UIColor.red
+         } else {
+             coinChangeLabel.text = nil
+         }
     }
     
     private func setupConstraints() {
