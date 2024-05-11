@@ -20,6 +20,7 @@ class CoinDetailViewController: UIViewController {
     var viewModel: CoinDetailViewModel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         configureUI()
         

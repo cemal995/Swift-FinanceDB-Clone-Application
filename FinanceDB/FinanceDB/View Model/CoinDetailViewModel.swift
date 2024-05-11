@@ -25,4 +25,5 @@ class CoinDetailViewModel {
             self.coin = coin
             self.sparklineValues = sparklineValues
         }
+    
 }

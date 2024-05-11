@@ -56,4 +56,5 @@ public struct Coin: Decodable {
         case the24hVolume = "24hVolume"
         case btcPrice
     }
+    
 }

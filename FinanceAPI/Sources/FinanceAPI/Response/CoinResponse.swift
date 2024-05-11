@@ -18,9 +18,12 @@ public struct CoinResponse: Decodable {
     }
 
     public init(from decoder: Decoder) throws {
+        
         let container = try decoder.container(keyedBy: RootCodingKeys.self)
         self.data = try container.decode(DataClass.self, forKey: .data)
+        
     }
+    
 }
 
 

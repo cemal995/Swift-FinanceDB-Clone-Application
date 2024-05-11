@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CfT-nX-ekg">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="153" width="393" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oYU-w7-fv7">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,17 +27,23 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiC-cb-LMJ">
+                                <rect key="frame" x="16" y="103" width="172" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CfT-nX-ekg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D2i-eK-Jo9"/>
-                            <constraint firstItem="CfT-nX-ekg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ocq-j9-Ix8"/>
+                            <constraint firstItem="CfT-nX-ekg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="O3N-P8-YZK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfT-nX-ekg" secondAttribute="trailing" id="f8g-vM-Koe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CfT-nX-ekg" secondAttribute="bottom" id="h8i-eE-mAo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ranking List" id="5jv-XZ-cDQ"/>
+                    <navigationItem key="navigationItem" id="5jv-XZ-cDQ"/>
                     <connections>
                         <outlet property="collectionView" destination="CfT-nX-ekg" id="4Rd-uc-ajE"/>
                     </connections>

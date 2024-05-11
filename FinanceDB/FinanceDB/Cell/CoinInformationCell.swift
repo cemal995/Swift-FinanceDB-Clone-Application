@@ -31,6 +31,7 @@ class CoinInformationCell: UICollectionViewCell {
         
         super.prepareForReuse()
         coinPictureImageView.image = nil
+        
     }
     
     func configure(coin: Coin) {
