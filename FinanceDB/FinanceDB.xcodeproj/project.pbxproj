@@ -23,6 +23,7 @@
 		8EA0AC722BEE1AA900FD5654 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0AC712BEE1AA900FD5654 /* UICollectionViewCell.swift */; };
 		8EA0AC752BEE1E7100FD5654 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0AC742BEE1E7100FD5654 /* LoadingView.swift */; };
 		8EA0AC782BEE212A00FD5654 /* LoadingShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0AC772BEE212A00FD5654 /* LoadingShowable.swift */; };
+		8EA2ECFF2BF22E3E00CC5D22 /* SparklineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2ECFE2BF22E3E00CC5D22 /* SparklineGraphView.swift */; };
 		8EBB8BE42BEE470E009FC643 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB8BE32BEE470E009FC643 /* ViewModel.swift */; };
 		8EBC15E22BED5BEC00BAE203 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBC15E12BED5BEC00BAE203 /* Kingfisher */; };
 		8EBC15E52BED5F1000BAE203 /* CoinInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBC15E42BED5F1000BAE203 /* CoinInformationCell.xib */; };
@@ -67,6 +68,7 @@
 		8EA0AC712BEE1AA900FD5654 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		8EA0AC742BEE1E7100FD5654 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8EA0AC772BEE212A00FD5654 /* LoadingShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingShowable.swift; sourceTree = "<group>"; };
+		8EA2ECFE2BF22E3E00CC5D22 /* SparklineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklineGraphView.swift; sourceTree = "<group>"; };
 		8EBB8BE32BEE470E009FC643 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8EBC15E32BED5F1000BAE203 /* CoinInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinInformationCell.swift; sourceTree = "<group>"; };
 		8EBC15E42BED5F1000BAE203 /* CoinInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinInformationCell.xib; sourceTree = "<group>"; };
@@ -105,8 +107,7 @@
 		8E63A4572BEBE8870097449E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8E9D61562BEB9B34002684CB /* AppDelegate.swift */,
-				8E9D61582BEB9B34002684CB /* SceneDelegate.swift */,
+				8E63A4582BEBE8AF0097449E /* Storyboard */,
 				8E9D61622BEB9B34002684CB /* Assets.xcassets */,
 				8E9D615F2BEB9B34002684CB /* FinanceDB.xcdatamodeld */,
 			);
@@ -129,6 +130,15 @@
 				8EBC15E42BED5F1000BAE203 /* CoinInformationCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8E7E16342BEFBA10000DAAD4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D61562BEB9B34002684CB /* AppDelegate.swift */,
+				8E9D61582BEB9B34002684CB /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		8E9D614A2BEB9B34002684CB = {
@@ -161,7 +171,7 @@
 				8EA0AC732BEE1E6200FD5654 /* View */,
 				8EA0AC6E2BEE1A6A00FD5654 /* Extension */,
 				8E63A4592BEBE8D40097449E /* Cell */,
-				8E63A4582BEBE8AF0097449E /* Storyboard */,
+				8E7E16342BEFBA10000DAAD4 /* App */,
 				8E63A4572BEBE8870097449E /* Resources */,
 				8E9D61672BEB9B34002684CB /* Info.plist */,
 			);
@@ -205,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA0AC742BEE1E7100FD5654 /* LoadingView.swift */,
+				8EA2ECFE2BF22E3E00CC5D22 /* SparklineGraphView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,6 +390,7 @@
 			files = (
 				8EC39CA22BEEA01B006D7FD3 /* CoinDetailViewModel.swift in Sources */,
 				8EBB8BE42BEE470E009FC643 /* ViewModel.swift in Sources */,
+				8EA2ECFF2BF22E3E00CC5D22 /* SparklineGraphView.swift in Sources */,
 				8EA0AC782BEE212A00FD5654 /* LoadingShowable.swift in Sources */,
 				8EA0AC702BEE1A9B00FD5654 /* UICollectionView.swift in Sources */,
 				8EC39CA42BEEA094006D7FD3 /* CoinDetailViewController.swift in Sources */,

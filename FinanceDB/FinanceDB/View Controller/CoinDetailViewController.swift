@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CoinDetailViewController: UIViewController {
     
@@ -16,8 +17,11 @@ class CoinDetailViewController: UIViewController {
     @IBOutlet weak var coinHighestPriceLabel: UILabel!
     @IBOutlet weak var coinChangeLabel: UILabel!
     @IBOutlet weak var coinLowestPriceLabel: UILabel!
+    @IBOutlet weak var coinPictureImageView: UIImageView!
     
     var viewModel: CoinDetailViewModel!
+    
+    @IBOutlet weak var SparklineGraphView: SparklineGraphView!
     
     override func viewDidLoad() {
         
@@ -35,10 +39,29 @@ class CoinDetailViewController: UIViewController {
         coinSymbolLabel.text = viewModel.coin.symbol
         coinNameLabel.text = viewModel.coin.name
         currentPriceLabel.text = "CURRENT PRICE"
-        coinPriceLabel.text = viewModel.coin.price
-        coinChangeLabel.text = viewModel.coin.change
-        coinHighestPriceLabel.text = "\(viewModel.highestPrice)"
-        coinLowestPriceLabel.text = "\(viewModel.lowestPrice)"
+        coinPriceLabel.text = viewModel.formattedCoinPrice
+        coinChangeLabel.text = viewModel.formattedChange
+        coinHighestPriceLabel.text = "High: \(viewModel.formattedHighestPrice)"
+        coinLowestPriceLabel.text = "Low: \(viewModel.formattedLowestPrice)"
+        
+        switch viewModel.changeLabelColor {
+            
+        case .red:
+            coinChangeLabel.textColor = .red
+            coinLowestPriceLabel.textColor = .red
+            coinHighestPriceLabel.textColor = .green
+        case .green:
+            coinChangeLabel.textColor = .green
+            coinLowestPriceLabel.textColor = .red
+            coinHighestPriceLabel.textColor = .green
+        case .black:
+            coinChangeLabel.textColor = .black
+            coinLowestPriceLabel.textColor = .red
+            coinHighestPriceLabel.textColor = .green
+        }
+        
+        SparklineGraphView.sparklineValues = viewModel.sparklineValues
+        
     }
 
 }

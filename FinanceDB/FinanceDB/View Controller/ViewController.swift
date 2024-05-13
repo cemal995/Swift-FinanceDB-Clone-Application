@@ -128,8 +128,6 @@ extension ViewController: ViewModelDelegate {
             print("Coin change is nil")
         }
         
-        print("Sparkline values: \(sparklineValues)")
-        
         let sparklineFloatValues = sparklineValues.compactMap { Float($0) }
         
         let detailViewModel = CoinDetailViewModel(coin: coin, sparklineValues: sparklineFloatValues)
@@ -137,10 +135,18 @@ extension ViewController: ViewModelDelegate {
     }
     
     private func navigateToCoinDetail(with viewModel: CoinDetailViewModel) {
-        let detailViewController = CoinDetailViewController()
-        detailViewController.viewModel = viewModel
-        navigationController?.pushViewController(detailViewController, animated: true)
-        detailViewController.loadViewIfNeeded()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+        
+            if let detailViewController = storyboard.instantiateViewController(withIdentifier: "CoinDetailViewController") as? CoinDetailViewController {
+     
+                detailViewController.viewModel = viewModel
+                
+                navigationController?.pushViewController(detailViewController, animated: true)
+            } else {
+                print("Failed to instantiate CoinDetailViewController from storyboard")
+            }
         
     }
     
