@@ -8,46 +8,60 @@
 import Foundation
 import FinanceAPI
 
+// MARK: - LabelColor
+
+/// Enumeration representing different label colors.
+
 enum LabelColor {
+    
     case red
     case green
     case black
+    
 }
 
+// MARK: - CoinDetailViewModel
+
+/// View model responsible for handling coin details.
+
 class CoinDetailViewModel {
+    
+    // MARK: Properties
     
     var coin: Coin
     let sparklineValues: [Float]
     
+    // MARK: Computed Properties
+    
     var imageURL: String? {
         
-           return coin.iconUrl
-       }
+        return coin.iconUrl
+    }
     
     var formattedCoinPrice: String {
         
         guard let price = Double(coin.price ?? "") else {
-                  return "N/A"
-              }
-        return formatPrice(Float(price))
-   
+            return "N/A"
         }
+        return formatPrice(Float(price))
+        
+    }
     
     var formattedChange: String {
-            guard let change = coin.change, let changeDouble = Double(change) else {
-                return "N/A"
-            }
-            
-            let formattedChange = String(format: "%.2f", changeDouble)
-            
-            if changeDouble > 0 {
-                return "+\(formattedChange)%"
-            } else if changeDouble < 0 {
-                return "\(formattedChange)%"
-            } else {
-                return "\(formattedChange)%"
-            }
+        guard let change = coin.change, let changeDouble = Double(change) else {
+            return "N/A"
         }
+        
+        let formattedChange = String(format: "%.2f", changeDouble)
+        
+        if changeDouble > 0 {
+            return "+\(formattedChange)%"
+        } else if changeDouble < 0 {
+            return "\(formattedChange)%"
+        } else {
+            return "\(formattedChange)%"
+        }
+    }
     
     var formattedHighestPrice: String {
         let highestPrice = self.highestPrice
@@ -69,38 +83,42 @@ class CoinDetailViewModel {
     
     var changeLabelColor: LabelColor {
         
-            guard let change = coin.change, let changeDouble = Double(change) else {
-                return .black
-            }
-            
-            return changeDouble > 0 ? .green : changeDouble < 0 ? .red : .black
+        guard let change = coin.change, let changeDouble = Double(change) else {
+            return .black
         }
         
-        var highestPrice: Float {
-            return sparklineValues.max() ?? 0
-        }
-        
-        var lowestPrice: Float {
-            return sparklineValues.min() ?? 0
-        }
+        return changeDouble > 0 ? .green : changeDouble < 0 ? .red : .black
+    }
+    
+    var highestPrice: Float {
+        return sparklineValues.max() ?? 0
+    }
+    
+    var lowestPrice: Float {
+        return sparklineValues.min() ?? 0
+    }
+    
+    // MARK: Helper Methods
     
     private func formatPrice(_ price: Float) -> String {
         
         let formatter = NumberFormatter()
-             formatter.numberStyle = .decimal
-             formatter.maximumFractionDigits = 2
-             formatter.minimumFractionDigits = 2
-             
-             if let formattedPrice = formatter.string(from: NSNumber(value: price)) {
-                 return "\(formattedPrice)"
-             } else {
-                 return "N/A"
-             }
-      }
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
         
-        init(coin: Coin, sparklineValues: [Float]) {
-            self.coin = coin
-            self.sparklineValues = sparklineValues
+        if let formattedPrice = formatter.string(from: NSNumber(value: price)) {
+            return "\(formattedPrice)"
+        } else {
+            return "N/A"
         }
+    }
+    
+    // MARK: Initializer
+    
+    init(coin: Coin, sparklineValues: [Float]) {
+        self.coin = coin
+        self.sparklineValues = sparklineValues
+    }
     
 }

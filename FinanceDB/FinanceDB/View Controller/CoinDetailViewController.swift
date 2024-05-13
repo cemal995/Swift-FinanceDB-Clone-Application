@@ -10,6 +10,8 @@ import Kingfisher
 
 class CoinDetailViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var coinSymbolLabel: UILabel!
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
@@ -18,10 +20,13 @@ class CoinDetailViewController: UIViewController {
     @IBOutlet weak var coinChangeLabel: UILabel!
     @IBOutlet weak var coinLowestPriceLabel: UILabel!
     @IBOutlet weak var coinPictureImageView: UIImageView!
+    @IBOutlet weak var SparklineGraphView: SparklineGraphView!
+    
+    // MARK: - Properties
     
     var viewModel: CoinDetailViewModel!
     
-    @IBOutlet weak var SparklineGraphView: SparklineGraphView!
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         
@@ -29,6 +34,8 @@ class CoinDetailViewController: UIViewController {
         configureUI()
         
     }
+    
+    // MARK: - UI Configuration
     
     func configureUI() {
         

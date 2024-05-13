@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - UICollectionViewCell Extension
+
 extension UICollectionViewCell {
     
     static var identifier: String {

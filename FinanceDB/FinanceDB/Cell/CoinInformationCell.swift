@@ -9,7 +9,11 @@ import UIKit
 import FinanceAPI
 import Kingfisher
 
+// MARK: - CoinInformationCell
+
 class CoinInformationCell: UICollectionViewCell {
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var coinPictureImageView: UIImageView!
     @IBOutlet weak var coinChangeLabel: UILabel!
@@ -17,10 +21,12 @@ class CoinInformationCell: UICollectionViewCell {
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var coinSymbolLabel: UILabel!
     
+    // MARK: - Lifecycle Methods
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        // Initialization code
+        
         coinPictureImageView.contentMode = .scaleAspectFit
         setupConstraints()
         setupAppearance()
@@ -33,6 +39,8 @@ class CoinInformationCell: UICollectionViewCell {
         coinPictureImageView.image = nil
         
     }
+    
+    // MARK: - Configuration
     
     func configure(coin: Coin) {
         
@@ -74,6 +82,8 @@ class CoinInformationCell: UICollectionViewCell {
         coinNameLabel.text = coin.name
         coinSymbolLabel.text = coin.symbol
     }
+    
+    // MARK: - Private Methods
     
     private func setupConstraints() {
         

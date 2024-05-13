@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - UICollectionView Extension
+
 extension UICollectionView {
     
     func register(cellType: UICollectionViewCell.Type) {

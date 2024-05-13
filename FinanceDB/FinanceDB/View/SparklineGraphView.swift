@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - SparklineGraphView
+
 class SparklineGraphView: UIView {
     
     var sparklineValues: [Float] = []
@@ -35,11 +37,11 @@ class SparklineGraphView: UIView {
         }
         
         private func calculateYPosition(for value: Float) -> CGFloat {
-            // Calculate the y-position of the point based on the value
-            // Adjust this calculation based on your specific requirements
+            
             let maxValue = sparklineValues.max() ?? 1.0
             let normalizedValue = CGFloat(value) / CGFloat(maxValue)
             return bounds.height * (1.0 - normalizedValue)
+            
         }
 
 }

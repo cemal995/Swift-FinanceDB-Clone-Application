@@ -20,38 +20,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
                 
-                // Create the main view controller
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 guard let rootVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
                     return
                 }
-                
-                // Create the view model
+        
                 let viewModel = ViewModel(service: FinanceService())
                 
-                // Inject the view model into the main view controller
                 rootVC.viewModel = viewModel
                 
-                // Create a navigation controller and set its root view controller
                 let navigationController = UINavigationController(rootViewController: rootVC)
                 
-                // Set the navigation controller as the root view controller of the window
                 window = UIWindow(windowScene: windowScene)
                 window?.rootViewController = navigationController
                 window?.makeKeyAndVisible()
         
-        /* guard let windowScene = (scene as? UIWindowScene) else { return }
-        self.window = UIWindow(windowScene: windowScene)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let rootVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-            return
-        }
-        
-        let viewModel = ViewModel(service: FinanceService())
-        rootVC.viewModel = viewModel
-        
-        self.window?.rootViewController = rootVC
-        self.window?.makeKeyAndVisible()*/
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

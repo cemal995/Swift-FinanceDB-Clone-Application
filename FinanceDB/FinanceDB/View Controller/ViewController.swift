@@ -7,7 +7,13 @@
 
 import UIKit
 
+// MARK: - ViewController
+
+/// View controller responsible for displaying a collection view of coin information.
+
 class ViewController: UIViewController, LoadingShowable {
+    
+    // MARK: Properties
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -16,6 +22,8 @@ class ViewController: UIViewController, LoadingShowable {
             viewModel.delegate = self
         }
     }
+    
+    // MARK: View Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -32,6 +40,10 @@ class ViewController: UIViewController, LoadingShowable {
         setupSegmentedControl()
     }
     
+    // MARK: Setup Methods
+    
+    /// Sets up the collection view.
+    
     func setupCollectionView() {
         
         collectionView.delegate = self
@@ -39,6 +51,8 @@ class ViewController: UIViewController, LoadingShowable {
         collectionView.register(cellType: CoinInformationCell.self)
         
     }
+    
+    /// Sets up the segmented control in the navigation bar.
     
     private func setupSegmentedControl() {
         
@@ -49,12 +63,18 @@ class ViewController: UIViewController, LoadingShowable {
         
     }
     
+    // MARK: Action Methods
+    
+    /// Handles the value changed event of the segmented control.
+    
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         
         viewModel.applyFilterForSelectedSegment(sender.selectedSegmentIndex)
     }
     
 }
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -84,6 +104,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -93,6 +115,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
+// MARK: - ViewModelDelegate
 
 extension ViewController: ViewModelDelegate {
     
@@ -104,49 +128,27 @@ extension ViewController: ViewModelDelegate {
             
         }
         
-        if let symbol = coin.symbol {
-            print("Coin symbol: \(symbol)")
-        } else {
-            print("Coin symbol is nil")
-        }
-        
-        if let name = coin.name {
-            print("Coin name: \(name)")
-        } else {
-            print("Coin name is nil")
-        }
-        
-        if let price = coin.price {
-            print("Coin price: \(price)")
-        } else {
-            print("Coin price is nil")
-        }
-        
-        if let change = coin.change {
-            print("Coin change: \(change)")
-        } else {
-            print("Coin change is nil")
-        }
-        
         let sparklineFloatValues = sparklineValues.compactMap { Float($0) }
         
         let detailViewModel = CoinDetailViewModel(coin: coin, sparklineValues: sparklineFloatValues)
+        
         navigateToCoinDetail(with: detailViewModel)
     }
     
     private func navigateToCoinDetail(with viewModel: CoinDetailViewModel) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
         
-            if let detailViewController = storyboard.instantiateViewController(withIdentifier: "CoinDetailViewController") as? CoinDetailViewController {
-     
-                detailViewController.viewModel = viewModel
-                
-                navigationController?.pushViewController(detailViewController, animated: true)
-            } else {
-                print("Failed to instantiate CoinDetailViewController from storyboard")
-            }
+        
+        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "CoinDetailViewController") as? CoinDetailViewController {
+            
+            detailViewController.viewModel = viewModel
+            
+            navigationController?.pushViewController(detailViewController, animated: true)
+            
+        } else {
+            print("Failed to instantiate CoinDetailViewController from storyboard")
+        }
         
     }
     
@@ -170,7 +172,7 @@ extension ViewController: ViewModelDelegate {
     
     func reloadData() {
         
-            collectionView.reloadData()
+        collectionView.reloadData()
         
     }
 }

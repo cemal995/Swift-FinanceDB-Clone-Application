@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - LoadingView
+
 class LoadingView {
     
     private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
