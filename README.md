@@ -53,3 +53,7 @@ The app is not yet ready for submission to the App Store. To achieve submission 
 - **Xcode**: The project requires Xcode to build and run.
   
 - **Internet Connection**: An active internet connection is required to fetch cryptocurrency data from the remote API.
+
+## Credits
+
+GameDB was created by Cemalhan Alptekin.
