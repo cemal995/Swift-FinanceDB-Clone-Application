@@ -6,6 +6,21 @@ FinanceDB is a simple iOS application designed to display cryptocurrency informa
 
 The app follows the Model-View-ViewModel (MVVM) architectural pattern. This pattern was chosen for its ability to separate concerns and improve testability and maintainability. Each component of the app, including the view controllers, view models, and services, is responsible for a specific set of tasks, resulting in a clean and organized codebase.
 
+## Technologies Used
+
+- Swift Programming Language
+- UIKit Framework
+- Alamofire for networking
+- Kingfisher for image loading
+- JSONDecoder for parsing JSON data
+- XCTest for unit testing
+
+## Screenshots
+
+| Main App Screen | Change Filtered App Screen | Coin Detail Screen |
+|:---------------:|:--------:|:--------:|
+| ![Main App Screen](screenshoots/MainAppScreen.png) | ![Change Filtered App Screen](screenshoots/ChangeFilter.png) | ![Coin Detail Screen](screenshoots/DetailAppScreen.png) |
+
 ## Areas for Improvement
 
 - **UI/UX Enhancements**: The app's user interface could be further improved to enhance the overall user experience. This includes adding animations, refining layout designs, and optimizing performance.
@@ -35,12 +50,6 @@ The app is not yet ready for submission to the App Store. To achieve submission 
 - **Advanced Sorting and Filtering**: The app currently supports basic sorting and filtering options. Implementing more advanced sorting and filtering functionalities could enhance the user experience.
   
 - **Offline Support**: Implementing offline support to cache data and provide basic functionality even when the device is offline would improve usability in low-connectivity scenarios.
-
-## Screenshots
-
-| Main App Screen | Change Filtered App Screen | Coin Detail Screen |
-|:---------------:|:--------:|:--------:|
-| ![Main App Screen](screenshoots/MainAppScreen.png) | ![Change Filtered App Screen](screenshoots/ChangeFilter.png) | ![Coin Detail Screen](screenshoots/DetailAppScreen.png) |
 
 ## Requirements
 
