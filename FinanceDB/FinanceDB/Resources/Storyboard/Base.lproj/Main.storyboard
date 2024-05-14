@@ -27,9 +27,11 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiC-cb-LMJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiC-cb-LMJ">
                                 <rect key="frame" x="16" y="103" width="172" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="DiU-Uj-Xzv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,9 +40,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CfT-nX-ekg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D2i-eK-Jo9"/>
+                            <constraint firstItem="IiC-cb-LMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HAt-7d-FWY"/>
                             <constraint firstItem="CfT-nX-ekg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="O3N-P8-YZK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfT-nX-ekg" secondAttribute="trailing" id="f8g-vM-Koe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CfT-nX-ekg" secondAttribute="bottom" id="h8i-eE-mAo"/>
+                            <constraint firstItem="CfT-nX-ekg" firstAttribute="top" secondItem="IiC-cb-LMJ" secondAttribute="bottom" constant="14" id="jRh-OQ-wpj"/>
+                            <constraint firstItem="IiC-cb-LMJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zzd-g4-527"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5jv-XZ-cDQ"/>
