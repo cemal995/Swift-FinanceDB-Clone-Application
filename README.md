@@ -38,9 +38,9 @@ The app is not yet ready for submission to the App Store. To achieve submission 
 
 ## Screenshots
 
-![Screenshot 1](screenshots/ChangeFilter.png)
-![Screenshot 2](screenshots/DetailAppScreen.png)
-![Screenshot 3](screenshots/MainAppScreen.png)
+| Main App Screen | Change Filtered App Screen | Coin Detail Screen |
+|:---------------:|:--------:|:--------:|
+| ![Main App Screen](screenshoots/MainAppScreen.png) | ![Change Filtered App Screen](screenshoots/ChangeFilter.png) | ![Coin Detail Screen](screenshoots/DetailAppScreen.png) |
 
 ## Requirements
 
