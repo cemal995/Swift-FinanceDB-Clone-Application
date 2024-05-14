@@ -139,8 +139,14 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historical Line Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o6-Ct-YyM">
+                                        <rect key="frame" x="0.0" y="250.33333333333331" width="393" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dig-1R-fly" customClass="SparklineGraphView" customModule="FinanceDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="250.33333333333329" width="393" height="508.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="279.33333333333326" width="393" height="479.66666666666674"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>

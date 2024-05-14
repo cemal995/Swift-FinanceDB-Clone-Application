@@ -32,7 +32,7 @@ class SparklineGraphView: UIView {
                 path.addLine(to: nextPoint)
             }
             
-            UIColor.blue.setStroke()
+            UIColor.green.setStroke()
             path.stroke()
         }
         
