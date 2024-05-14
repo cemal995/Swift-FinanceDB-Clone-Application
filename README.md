@@ -13,7 +13,6 @@ The app follows the Model-View-ViewModel (MVVM) architectural pattern. This patt
 - Alamofire for networking
 - Kingfisher for image loading
 - JSONDecoder for parsing JSON data
-- XCTest for unit testing
 
 ## Screenshots
 
@@ -42,8 +41,6 @@ The app is not yet ready for submission to the App Store. To achieve submission 
 ## Assumptions and Comments
 
 - **Third-Party Libraries**: The project uses third-party libraries such as Alamofire and Kingfisher to simplify networking and image loading tasks, respectively. These libraries were chosen for their reliability, popularity, and ease of use.
-  
-- **JSON Decoding**: The `Decoders` enum provides a centralized approach to configure JSON decoding strategies, enhancing code readability and maintainability.
 
 ## Missing Features and Open Issues
 
