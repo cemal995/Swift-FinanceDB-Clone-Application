@@ -56,4 +56,4 @@ The app is not yet ready for submission to the App Store. To achieve submission 
 
 ## Credits
 
-GameDB was created by Cemalhan Alptekin.
+FinanceDB was created by Cemalhan Alptekin.
