@@ -4,7 +4,9 @@ FinanceDB is a simple iOS application designed to display cryptocurrency informa
 
 ## Design and Architectural Patterns
 
-The app follows the Model-View-ViewModel (MVVM) architectural pattern. This pattern was chosen for its ability to separate concerns and improve testability and maintainability. Each component of the app, including the view controllers, view models, and services, is responsible for a specific set of tasks, resulting in a clean and organized codebase. For the networking layer, FinanceDB utilizes a modular package to handle API requests and responses efficiently. This modular approach enhances code reusability and allows for easy integration of additional APIs or services in the future.
+The app follows the Model-View-ViewModel (MVVM) architectural pattern. This pattern was chosen for its ability to separate concerns and improve testability and maintainability. Each component of the app, including the view controllers, view models, and services, is responsible for a specific set of tasks, resulting in a clean and organized codebase. 
+
+For the networking layer, FinanceDB utilizes a modular package to handle API requests and responses efficiently. This modular approach enhances code reusability and allows for easy integration of additional APIs or services in the future.
 
 ## Technologies Used
 
