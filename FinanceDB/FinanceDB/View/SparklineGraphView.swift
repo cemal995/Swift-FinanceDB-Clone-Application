@@ -12,6 +12,7 @@ import UIKit
 class SparklineGraphView: UIView {
     
     var sparklineValues: [Float] = []
+    var lineColor: UIColor = .blue
         
         override func draw(_ rect: CGRect) {
             super.draw(rect)
@@ -32,7 +33,16 @@ class SparklineGraphView: UIView {
                 path.addLine(to: nextPoint)
             }
             
-            UIColor.green.setStroke()
+            switch lineColor {
+                
+                    case .green:
+                        UIColor.green.setStroke()
+                    case .red:
+                        UIColor.red.setStroke()
+                    default:
+                        UIColor.black.setStroke()
+                    }
+            
             path.stroke()
         }
         

@@ -68,6 +68,7 @@ class CoinDetailViewController: UIViewController {
         }
         
         SparklineGraphView.sparklineValues = viewModel.sparklineValues
+        SparklineGraphView.lineColor = viewModel.changeLabelColor == .green ? .green : .red
         
     }
 
